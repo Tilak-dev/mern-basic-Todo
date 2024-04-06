@@ -1,11 +1,13 @@
 const express = require("express");
 const { createTodo, updateTodo } = require("./types");
 const { todo } = require("./db");
+const cors = require("cors");
 const PORT = 3000;
 
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 app.post("/todo", async (req, res) => {
    const createPayload = req.body;
@@ -52,8 +54,8 @@ app.put("/completed", async (req, res) => {
       }
    );
    res.status(200).json({
-    msg : " You sent wrong input"
-   })
+      msg: " You sent wrong input",
+   });
 });
 
 app.listen(PORT, () => {

@@ -9,8 +9,10 @@
   "author": "tilak",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.19.2",
     "mongoose": "^8.3.0",
+    "nodemon": "^3.1.0",
     "zod": "^3.22.4"
   }
 }
