@@ -7,10 +7,21 @@ import "./App.css";
 function App() {
    const [todos, setTodos] = useState([]);
 
-   fetch("http://localhost:3000/todos").then(async function (res) {
+
+   //my one
+   fetch("https://sum-server.100xdevs.com/todos")
+   .then(async function (res) {
       const json = await res.json();
       setTodos(json.todos);
    });
+
+   //sir one
+   useEffect(() => {
+      fetch("https://sum-server.100xdevs.com/todos").then(async (res) => {
+        const json = await res.json();
+        setTodos(json.todos);
+      });
+    },3000);
 
    return (
       <>
